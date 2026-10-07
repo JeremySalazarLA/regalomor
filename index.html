@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tulipanes para ti</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="scene">
+
+  <svg id="bouquetScene" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+
+    <defs>
+      <radialGradient id="bgLight" cx="35%" cy="25%" r="70%">
+        <stop offset="0%" stop-color="#fff8f3"/>
+        <stop offset="45%" stop-color="#f6d9d0"/>
+        <stop offset="100%" stop-color="#ddb5ae"/>
+      </radialGradient>
+
+      <linearGradient id="paper1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fff9f6" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#f1d8d1" stop-opacity="0.7"/>
+      </linearGradient>
+
+      <linearGradient id="paper2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffeceb" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#eec8c2" stop-opacity="0.65"/>
+      </linearGradient>
+
+      <radialGradient id="coralPetal" cx="40%" cy="25%" r="80%">
+        <stop offset="0%" stop-color="#ffd2db"/>
+        <stop offset="45%" stop-color="#ff7b92"/>
+        <stop offset="100%" stop-color="#d94869"/>
+      </radialGradient>
+
+      <radialGradient id="rosePetal" cx="38%" cy="22%" r="80%">
+        <stop offset="0%" stop-color="#ffc8d1"/>
+        <stop offset="50%" stop-color="#ff6583"/>
+        <stop offset="100%" stop-color="#c93a5b"/>
+      </radialGradient>
+
+      <radialGradient id="whitePetal" cx="40%" cy="25%" r="80%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="55%" stop-color="#fff6f0"/>
+        <stop offset="100%" stop-color="#e6d5cd"/>
+      </radialGradient>
+
+      <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#84c96c"/>
+        <stop offset="55%" stop-color="#4d9c57"/>
+        <stop offset="100%" stop-color="#2f6c3f"/>
+      </linearGradient>
+
+      <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="10" stdDeviation="10"
+          flood-color="#8b5b56" flood-opacity="0.22"/>
+      </filter>
+
+      <filter id="petalShadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="3" stdDeviation="4"
+          flood-color="#4d2b2b" flood-opacity="0.18"/>
+      </filter>
+
+      <filter id="blurGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="25"/>
+      </filter>
+    </defs>
+
+    <!-- Fondo -->
+    <rect width="1000" height="1000" fill="url(#bgLight)"/>
+
+    <circle cx="180" cy="180" r="130"
+      fill="#ffffff" opacity="0.11" filter="url(#blurGlow)"/>
+
+    <circle cx="800" cy="220" r="110"
+      fill="#fff8f2" opacity="0.08" filter="url(#blurGlow)"/>
+
+    <circle cx="680" cy="760" r="150"
+      fill="#ffffff" opacity="0.08" filter="url(#blurGlow)"/>
+
+    <!-- Sombra -->
+    <ellipse cx="500" cy="575" rx="250" ry="230"
+      fill="#8b6661" opacity="0.10" filter="url(#blurGlow)"/>
+
+    <!-- Papel -->
+    <g id="paperWrap" filter="url(#softShadow)">
+
+      <path
+        d="M500 305
+        C615 325,715 420,745 535
+        C765 615,745 720,675 790
+        C610 855,520 885,435 865
+        C340 842,262 776,235 685
+        C210 600,225 500,275 425
+        C335 337,410 295,500 305Z"
+        fill="url(#paper1)"
+        opacity="0.92"
+      />
+
+      <path
+        d="M500 325
+        C640 345,730 430,742 542
+        C752 635,700 740,618 800
+        C558 844,440 862,355 820
+        C280 783,232 700,228 600
+        C223 494,278 405,367 350
+        C417 318,455 310,500 325Z"
+        fill="url(#paper2)"
+        opacity="0.42"
+      />
+
+      <path d="M355 362 L275 425 L310 500 L405 420 Z"
+        fill="#fff6f3" opacity="0.62"/>
+
+      <path d="M640 372 L730 428 L690 515 L590 430 Z"
+        fill="#fff5f2" opacity="0.56"/>
+
+      <path d="M390 800 L458 860 L400 862 L330 812 Z"
+        fill="#f7dfda" opacity="0.75"/>
+
+      <path d="M602 795 L675 790 L622 848 L542 858 Z"
+        fill="#f9e5e1" opacity="0.72"/>
+
+    </g>
+
+    <!-- Hojas -->
+    <g id="fillerLeaves" opacity="0.95">
+
+      <path
+        d="M370 465 C330 420,315 390,320 355 C357 387,388 420,410 470 Z"
+        fill="url(#leafGradient)" opacity="0.9"/>
+
+      <path
+        d="M655 470 C700 430,720 395,715 360 C680 390,645 428,620 472 Z"
+        fill="url(#leafGradient)" opacity="0.9"/>
+
+      <path
+        d="M500 710 C530 760,540 800,525 845 C488 803,473 770,472 718 Z"
+        fill="url(#leafGradient)" opacity="0.8"/>
+
+      <path
+        d="M300 620 C250 630,220 650,210 700 C260 695,295 674,326 640 Z"
+        fill="url(#leafGradient)" opacity="0.8"/>
+
+      <path
+        d="M700 625 C745 640,770 670,775 718 C730 705,700 675,674 640 Z"
+        fill="url(#leafGradient)" opacity="0.8"/>
+
+    </g>
+
+    <!-- Tulipanes generados con JS -->
+    <g id="tulipsLayer"></g>
+
+  </svg>
+
+
+  <!-- Pantalla inicial -->
+  <div class="overlay">
+    <div class="card" id="introCard">
+
+      <p class="eyebrow">Una sorpresa especial</p>
+
+      <h1>Para una persona muy especial 🌷</h1>
+
+      <p class="subtitle">Haz clic</p>
+
+      <button id="startBtn" type="button">
+        Ver ramo
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Foto + frase final -->
+  <div class="finalContent" id="finalContent">
+
+    <div class="photoContainer">
+      <img
+        src="assets/foto.jpeg"
+        alt="Un recuerdo especial"
+        class="specialPhoto"
+      >
+    </div>
+
+    <div class="finalText">
+      Espero que esto te saque una sonrisa 🌷
+    </div>
+
+  </div>
+
+</div>
+
+
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="assets/musica.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
